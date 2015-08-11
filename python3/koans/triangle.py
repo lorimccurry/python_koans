@@ -17,8 +17,14 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    tri_set = set([a, b, c])
+
+    if len(tri_set) == 1:
+        return 'equilateral'
+    elif len(tri_set) == 2:
+        return 'isosceles'
+    elif len(tri_set) == 3:
+        return 'scalene'
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
