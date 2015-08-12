@@ -17,9 +17,14 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    tri_set = set([a, b, c])
+    sides = [a,b,c]
+    tri_set = set(sides)
 
-    if len(tri_set) == 1:
+    if any(n <= 0 for n in tri_set):
+        raise TriangleError(AttributeError('Looking for actual triangles, kids'))
+    elif a + b + c <= 2 * max(a, b, c): 
+        raise TriangleError(AttributeError('There is no triangle, or Arizona'))
+    elif len(tri_set) == 1:
         return 'equilateral'
     elif len(tri_set) == 2:
         return 'isosceles'
