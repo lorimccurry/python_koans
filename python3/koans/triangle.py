@@ -22,7 +22,7 @@ def triangle(a, b, c):
 
     if any(n <= 0 for n in tri_set):
         raise TriangleError(AttributeError('Looking for actual triangles, kids'))
-    elif a + b + c <= 2 * max(a, b, c): 
+    elif a + b + c <= 2 * max(a, b, c):
         raise TriangleError(AttributeError('There is no triangle, or Arizona'))
     elif len(tri_set) == 1:
         return 'equilateral'
